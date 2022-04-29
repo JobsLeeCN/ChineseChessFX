@@ -99,7 +99,7 @@ public class MainController implements LifeCycle {
     public void helpAboutAction() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("关于中国象棋FX完美版");
-        alert.setHeaderText("本程序由JobsLeeCN开发，基于MIT开源协议。");
+        alert.setHeaderText("本程序由JobsLeeCN开发，基于Apache-2.0开源协议。");
         alert.setContentText("欢迎Stars！GitHub: https://github.com/JobsLeeCN/");
         alert.showAndWait();
     }
