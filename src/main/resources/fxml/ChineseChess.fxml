@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+            prefWidth="785.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.jobsl.cgames.cchess.controller.MainController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="游戏">
+                    <items>
+                        <Menu mnemonicParsing="false" text="新游戏">
+                            <items>
+                                <CheckMenuItem fx:id="menu_single_mode" mnemonicParsing="false"
+                                               onAction="#singleModeAction" text="单人"/>
+                                <CheckMenuItem fx:id="menu_multiple_mode" mnemonicParsing="false"
+                                               onAction="#multipleModeAction" text="多人"/>
+                            </items>
+                        </Menu>
+                        <MenuItem fx:id="menu_open_file" mnemonicParsing="false" onAction="#openFileAction" text="打开"/>
+                        <MenuItem fx:id="menu_save_file" mnemonicParsing="false" onAction="#saveFileAction" text="保存"/>
+                        <MenuItem fx:id="menu_exit" mnemonicParsing="false" onAction="#exitAction" text="退出"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="网络">
+                    <items>
+                        <MenuItem fx:id="menu_net_status" mnemonicParsing="false" onAction="#netSatusAction"
+                                  text="查看状态"/>
+                        <MenuItem fx:id="menu_netserver_setting" mnemonicParsing="false"
+                                  onAction="#netServerSettingAction" text="服务器设置"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                    <items>
+                        <MenuItem fx:id="menu_help_update" mnemonicParsing="false" onAction="#helpUpdateAction"
+                                  text="更新"/>
+                        <MenuItem fx:id="menu_help_about" mnemonicParsing="false" onAction="#helpAboutAction"
+                                  text="关于"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <right>
+        <AnchorPane prefWidth="262.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="67.0" layoutY="14.0" text="中国象棋FX完美版">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="45.0" layoutY="57.0" text="执方" underline="true">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="45.0" layoutY="82.0" text="统计" underline="true">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="58.0" layoutY="109.0" text="步数"/>
+                <Label layoutX="58.0" layoutY="133.0" text="时间"/>
+                <Label id="net_lable" fx:id="net_lable" layoutX="44.0" layoutY="158.0" text=" 网络" underline="true"
+                       visible="false">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="46.0" layoutY="184.0" text="信息" underline="true">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Text id="identity_info" fx:id="identity_info" disable="true" layoutX="119.0" layoutY="70.0"
+                      strokeType="OUTSIDE" strokeWidth="0.0"/>
+                <Text id="total_count" fx:id="total_count" disable="true" layoutX="119.0" layoutY="122.0"
+                      strokeType="OUTSIDE" strokeWidth="0.0" text="0"/>
+                <Text id="total_time" fx:id="total_time" disable="true" layoutX="119.0" layoutY="146.0"
+                      strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00"/>
+                <Text id="net_status" fx:id="net_status" disable="true" layoutX="119.0" layoutY="171.0"
+                      strokeType="OUTSIDE" strokeWidth="0.0" text="loading..." visible="false"/>
+                <TextArea id="more_info" fx:id="more_info" editable="false" layoutX="32.0" layoutY="207.0"
+                          prefHeight="350.0" prefWidth="200.0"/>
+            </children>
+        </AnchorPane>
+    </right>
+    <center>
+        <AnchorPane id="board_pane" fx:id="board_pane" prefHeight="579.0" prefWidth="523.0"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <ImageView id="board_image" fx:id="board_image" fitHeight="577.0" fitWidth="521.0" layoutX="1.0"
+                           layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/image/BOARD.JPG"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
